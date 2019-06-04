@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Vue.js Zonawiki"/>
-    <UserName greeting="Hola Hubo "></UserName>
+    <UserName greeting="Que Hubo "></UserName>
   </div>
 </template>
 

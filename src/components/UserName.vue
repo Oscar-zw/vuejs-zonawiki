@@ -6,7 +6,16 @@
     <br>
     <input id="usernameinput" type="text" v-model="theusername">
 
-    <h3>{{greeting}} {{ theusername }} </h3>
+
+    <h3 
+      v-if="theusername.length > 1" 
+      v-bind:class="[colorClass]" >{{greeting}} {{ theusername }} </h3>
+    
+
+    <h3 v-if="theusername.length <= 0" >"ingresaa un nombre usuario"</h3>
+
+    <button v-on:click="cambiarRojo">Cambiar a rojo</button>
+    <button v-on:click="cambiarAzul">Cambiar a azul</button>
 
   </div>
 </template>
@@ -19,9 +28,28 @@ export default {
   },
   data() {
     return {
-      theusername: "zonawiki user"
+      theusername: "zonawiki user",
+      colorClass: "black"
+    }
+  },
+  methods: {
+    cambiarRojo: function (e) {
+      this.colorClass = "rojo"
+    },
+    cambiarAzul: function (e) {
+      this.colorClass = "azul"
     }
   }
 }
 </script>
+
+<style>
+  .rojo {
+    color: red;
+  }
+
+  .azul {
+    color: blue;
+  }
+</style>
 
